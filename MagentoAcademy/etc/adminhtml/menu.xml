@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="SysPerson_MagentoAcademy::all"
+                title="MagentoAcademy"
+                translate="title"
+                module="SysPerson_MagentoAcademy"
+                sortOrder="20"
+                dependsOnModule="SysPerson_MagentoAcademy"
+                resource="SysPerson_MagentoAcademy::all"
+        />
+
+        <add
+                id="SysPerson_MagentoAcademy::uiGrid"
+                title="Persons UI Grid"
+                translate="title"
+                module="SysPerson_MagentoAcademy"
+                sortOrder="10"
+                parent="SysPerson_MagentoAcademy::all"
+                action="sysperson_magentoacademy/persons/listing"
+                resource="SysPerson_MagentoAcademy::grid"
+        />
+
+
+    </menu>
+</config>

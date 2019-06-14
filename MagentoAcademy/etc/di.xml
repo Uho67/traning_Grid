@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="SysPerson\MagentoAcademy\Api\Data\PersonsInterface"
+                type="SysPerson\MagentoAcademy\Model\Persons" />
+    <preference for="SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface"
+                type="SysPerson\MagentoAcademy\Model\PersonsRepository" />
+    <preference for="SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item
+                        name="persons_grid_listing_data_source"
+                        xsi:type="string"
+                >SysPerson\MagentoAcademy\Model\ResourceModel\Persons\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
