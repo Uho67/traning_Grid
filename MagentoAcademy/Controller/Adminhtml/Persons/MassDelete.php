@@ -10,7 +10,8 @@ class MassDelete extends BaseAction
     /** {@inheritdoc} */
     public function execute()
     {
-        $ids = $this->getRequest()->getParam('ids');
+        $ids = $this->getRequest()->getParam('selected');
+
         if (count($ids)) {
             foreach ($ids as $id) {
                 try {
