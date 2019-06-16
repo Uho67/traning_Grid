@@ -22,8 +22,8 @@ use SysPerson\MagentoAcademy\Model\PersonsFactory;
 
 abstract class Persons extends Action
 {
-    const ACL_RESOURCE          = 'Sysint_MagentoAcademy::all';
-    const MENU_ITEM             = 'Sysint_MagentoAcademy::all';
+    const ACL_RESOURCE          = 'Sysperson_MagentoAcademy::all';
+    const MENU_ITEM             = 'Sysperson_MagentoAcademy::all';
     const PAGE_TITLE            = 'MagentoAcademy Persons';
     const BREADCRUMB_TITLE      = 'Persons';
     const QUERY_PARAM_ID        = 'id';

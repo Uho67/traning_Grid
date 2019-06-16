@@ -6,10 +6,10 @@
         <tab id="sysperson_magentoacademy" translate="label" sortOrder="1000">
             <label>Magento Academy</label>
         </tab>
-        <section id="persons" translate="label" type="text" sortOrder="100" showInDefault="0" showInWebsite="0" showInStore="1">
+        <section id="persons" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Persons</label>
             <tab>sysperson_magentoacademy</tab>
-            <resource>Sysperson_MagentoAcademy::system_config</resource>
+            <resource>SysPerson_MagentoAcademy::system_config</resource>
             <group
                     id="general"
                     translate="label"

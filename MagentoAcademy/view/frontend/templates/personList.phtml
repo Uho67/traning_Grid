@@ -1,0 +1,25 @@
+
+
+<?php
+
+/** @var $block \SysPerson\MagentoAcademy\Block\PersonsList */
+
+$searchResult = $block->getActualPersonsList();
+
+?>
+<div id="person-list">
+    <h1><?= __('Persons') ?></h1>
+    <?php if ($searchResult->getTotalCount()  === 0): ?>
+        <p><?= __('Actual customer not found') ?></p>
+    <?php else: ?>
+        <ul>
+            <?php foreach ($searchResult->getItems() as $item): ?>
+                <?php /** @var \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $item */ ?>
+                <li>
+                    <p><?= $item->getName() ?> <?= $item->getSurname() ?></p>
+                    <p>My BIrthday <?= $item->getBirthDate() ?></p>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</div>

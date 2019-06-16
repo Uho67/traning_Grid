@@ -24,6 +24,20 @@
                 resource="SysPerson_MagentoAcademy::grid"
         />
 
+        <add
+                id="SysPerson_MagentoAcademy::uiCreat"
+                title="Create person"
+                translate="title"
+                module="SysPerson_MagentoAcademy"
+                sortOrder="10"
+                parent="SysPerson_MagentoAcademy::all"
+                action="sysperson_magentoacademy/persons/uicreate"
+                resource="SysPerson_MagentoAcademy::grid"
+        />
+
+
+
+
 
     </menu>
 </config>

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Mymodules\Trainingtwo\UI\Component\Listing\Column;
+namespace SysPerson\MagentoAcademy\UI\Component\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
@@ -10,8 +10,8 @@ use Magento\Framework\UrlInterface;
 
 class Actions extends Column
 {
-    const URL_PATH_EDIT = 'mymodules_trainingtwo/customer/edit';
-    const URL_PATH_DELETE = 'mymodules_trainingtwo/customer/delete';
+    const URL_PATH_EDIT = 'sysperson_magentoacademy/persons/edit';
+    const URL_PATH_DELETE = 'sysperson_magentoacademy/persons/delete';
 
     /** @var UrlInterface */
     protected $urlBuilder;
@@ -43,16 +43,17 @@ class Actions extends Column
     /** {@inheritdoc} */
     public function prepareDataSource(array $dataSource)
     {
+
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
                 $name = $this->getData('name');
-                if (isset($item['customer_id'])) {
+                if (isset($item['person_id'])) {
                     $item[$name]['edit'] = [
-                        'href' => $this->urlBuilder->getUrl($this->editUrl, ['id' => $item['customer_id']]),
+                        'href' => $this->urlBuilder->getUrl($this->editUrl, ['id' => $item['person_id']]),
                         'label' => __('Edit')
                     ];
                     $item[$name]['delete'] = [
-                        'href' => $this->urlBuilder->getUrl(self::URL_PATH_DELETE, ['id' => $item['customer_id']]),
+                        'href' => $this->urlBuilder->getUrl(self::URL_PATH_DELETE, ['id' => $item['person_id']]),
                         'label' => __('Delete'),
                         'confirm' => [
                             'title' => __('Delete "${ $.$data.title }"'),
