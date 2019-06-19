@@ -16,10 +16,37 @@ $searchResult = $block->getActualPersonsList();
             <?php foreach ($searchResult->getItems() as $item): ?>
                 <?php /** @var \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $item */ ?>
                 <li>
-                    <p><?= $item->getName() ?> <?= $item->getSurname() ?></p>
-                    <p>My BIrthday <?= $item->getBirthDate() ?></p>
+                    <p><?= $item->getName() ?></p>
+                    <p> <?= $item->getSurname() ?></p>
+                    <p><?= $item->getBirthDate() ?></p>
                 </li>
             <?php endforeach; ?>
         </ul>
     <?php endif; ?>
 </div>
+<div class="ui-test" data-bind="scope: 'alevel-component'">
+    <h1 data-bind="text: title"></h1>
+</div>
+
+
+<div class="ui-test" data-bind="scope: 'alevel-component-2'">
+    <h1 data-bind="text: title"></h1>
+    <p data-bind="text: message"></p>
+    <p data-bind="text: customMethod()"></p>
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "alevel-component": {
+                        "component": "ALevel_UiComponent/js/component",
+                        "title": "Hello Ui"
+                    }
+                }
+            }
+        }
+    }
+</script>

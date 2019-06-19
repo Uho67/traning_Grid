@@ -3,15 +3,12 @@
 
 namespace SysPerson\MagentoAcademy\Model\ResourceModel;
 
-use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
-use SysPerson\MagentoAcademy\Api\Data\PersonsInterface;
-
-class Persons extends AbstractDb
+class Persons extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     /** {@inheritdoc} */
     protected function _construct()
     {
-        $this->_init(PersonsInterface::TABLE_NAME, PersonsInterface::ID_FIELD);
+        $this->_init(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface::TABLE_NAME, \SysPerson\MagentoAcademy\Api\Data\PersonsInterface::ID_FIELD);
     }
 }

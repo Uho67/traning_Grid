@@ -3,22 +3,21 @@
 
 namespace SysPerson\MagentoAcademy\Api\Data;
 
-use Magento\Framework\Api\SearchResultsInterface;
 
-interface PersonsSearchResultsInterface extends SearchResultsInterface
+interface PersonsSearchResultsInterface extends \Magento\Framework\Api\SearchResultsInterface
 {
     /**
      * Get Persons list.
      *
-     * @return PersonsInterface[]
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsInterface[]
      */
     public function getItems();
 
     /**
      * Set blocks list.
      *
-     * @param PersonsInterface[] $items
-     * @return PersonsSearchResultsInterface
+     * @param \SysPerson\MagentoAcademy\Api\Data\PersonsInterface[] $items
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterface
      */
     public function setItems(array $items);
 }

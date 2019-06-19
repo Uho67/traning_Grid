@@ -3,37 +3,31 @@
 
 namespace SysPerson\MagentoAcademy\Model;
 
-use Magento\Framework\Model\AbstractModel;
-use Magento\Framework\DataObject\IdentityInterface;
-use Magento\Framework\Stdlib\DateTime;
 
-use SysPerson\MagentoAcademy\Api\Data\PersonsInterface;
-use SysPerson\MagentoAcademy\Model\ResourceModel\Persons as ResourceModel;
-
-class Persons extends AbstractModel implements PersonsInterface, IdentityInterface
+class Persons extends \Magento\Framework\Model\AbstractModel implements \SysPerson\MagentoAcademy\Api\Data\PersonsInterface, \Magento\Framework\DataObject\IdentityInterface
 {
     /** {@inheritdoc} */
     public function _construct()
     {
-        $this->_init(ResourceModel::class);
+        $this->_init(\SysPerson\MagentoAcademy\Model\ResourceModel\Persons::class);
     }
 
     /** {@inheritdoc} */
     public function getIdentities()
     {
-        return [sprintf("%s_%s", PersonsInterface::CACHE_TAG, $this->getId())];
+        return [sprintf("%s_%s", \SysPerson\MagentoAcademy\Api\Data\PersonsInterface::CACHE_TAG, $this->getId())];
     }
 
     /** {@inheritdoc} */
     public function getName()
     {
-        return $this->getData(PersonsInterface::NAME_FIELD);
+        return $this->getData(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface::NAME_FIELD);
     }
 
     /** {@inheritdoc} */
     public function setName($name)
     {
-        $this->setData(PersonsInterface::NAME_FIELD, $name);
+        $this->setData(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface::NAME_FIELD, $name);
 
         return $this;
     }
@@ -41,13 +35,13 @@ class Persons extends AbstractModel implements PersonsInterface, IdentityInterfa
     /** {@inheritdoc} */
     public function getSurname()
     {
-        return $this->getData(PersonsInterface::SURNAME_FIELD);
+        return $this->getData(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface::SURNAME_FIELD);
     }
 
     /** {@inheritdoc} */
     public function setSurname($Surname)
     {
-        $this->setData(PersonsInterface::SURNAME_FIELD, $Surname);
+        $this->setData(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface::SURNAME_FIELD, $Surname);
 
         return $this;
     }
@@ -55,17 +49,17 @@ class Persons extends AbstractModel implements PersonsInterface, IdentityInterfa
     /** {@inheritdoc} */
     public function getBirthDate()
     {
-        return $this->getData(PersonsInterface::BIRTH_DATE_FIELD);
+        return $this->getData(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface::BIRTH_DATE_FIELD);
     }
 
     /** {@inheritdoc} */
     public function setBirthDate($statDate)
     {
-        if ($statDate instanceof \DateTime) {
-            $statDate = $statDate->format(DateTime::DATETIME_PHP_FORMAT);
+        if ($statDate instanceof \Magento\Framework\Stdlib\DateTime) {
+            $statDate = $statDate->format(\Magento\Framework\Stdlib\DateTime::DATETIME_PHP_FORMAT);
         }
 
-        $this->setData(PersonsInterface::BIRTH_DATE_FIELD, $statDate);
+        $this->setData(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface::BIRTH_DATE_FIELD, $statDate);
 
         return $this;
     }

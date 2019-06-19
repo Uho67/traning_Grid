@@ -3,43 +3,29 @@
 
 namespace SysPerson\MagentoAcademy\Model;
 
-use Magento\Framework\Api\SearchCriteriaInterface;
-use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
-
-use Magento\Framework\Exception\CouldNotDeleteException;
-use Magento\Framework\Exception\CouldNotSaveException;
-use Magento\Framework\Exception\NoSuchEntityException;
-
-use SysPerson\MagentoAcademy\Api\Data\PersonsInterface;
-use SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface;
-use SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterfaceFactory;
-use SysPerson\MagentoAcademy\Model\ResourceModel\Persons as ResourceModel;
-use SysPerson\MagentoAcademy\Model\PersonsFactory;
-use SysPerson\MagentoAcademy\Model\ResourceModel\Persons\CollectionFactory;
-
-class PersonsRepository implements PersonsRepositoryInterface
+class PersonsRepository implements \SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface
 {
-    /** @var ResourceModel */
+    /** @var \SysPerson\MagentoAcademy\Model\ResourceModel\Persons */
     protected $resource;
 
-    /** @var PersonsFactory  */
+    /** @var \SysPerson\MagentoAcademy\Model\PersonsFactory  */
     protected $personsFactory;
 
-    /** @var CollectionProcessorInterface */
+    /** @var \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface */
     protected $collectionProcessor;
 
-    /** @var CollectionFactory */
+    /** @var \SysPerson\MagentoAcademy\Model\ResourceModel\Persons\CollectionFactory */
     protected $collectionFactory;
 
-    /** @var PersonsSearchResultsInterfaceFactory */
+    /** @var \SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterfaceFactory */
     protected $searchResultsFactory;
 
     public function __construct(
-        ResourceModel $resource,
-        PersonsFactory $personsFactory,
-        CollectionProcessorInterface $collectionProcessor,
-        CollectionFactory $collectionFactory,
-        PersonsSearchResultsInterfaceFactory $personsSearchResultsFactory
+        \SysPerson\MagentoAcademy\Model\ResourceModel\Persons $resource,
+        \SysPerson\MagentoAcademy\Model\PersonsFactory $personsFactory,
+        \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface $collectionProcessor,
+        \SysPerson\MagentoAcademy\Model\ResourceModel\Persons\CollectionFactory $collectionFactory,
+        \SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterfaceFactory $personsSearchResultsFactory
     ) {
         $this->resource                 = $resource;
         $this->personsFactory           = $personsFactory;
@@ -55,7 +41,7 @@ class PersonsRepository implements PersonsRepositoryInterface
         $this->resource->load($persons, $id);
 
         if (!$persons->getId()) {
-            throw new NoSuchEntityException(__('Persons with id "%1" does not exist.', $id));
+            throw new \Magento\Framework\Exception\NoSuchEntityException(__('Persons with id "%1" does not exist.', $id));
         }
 
         return $persons;
@@ -68,7 +54,7 @@ class PersonsRepository implements PersonsRepositoryInterface
     }
 
     /** {@inheritdoc} */
-    public function getList(SearchCriteriaInterface $searchCriteria)
+    public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria )
     {
         $collection = $this->collectionFactory->create();
 
@@ -83,24 +69,24 @@ class PersonsRepository implements PersonsRepositoryInterface
     }
 
     /** {@inheritdoc} */
-    public function save(PersonsInterface $person)
+    public function save(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person)
     {
         try {
             $this->resource->save($person);
         } catch (\Exception $exception) {
-            throw new CouldNotSaveException(__($exception->getMessage()));
+            throw new \Magento\Framework\Exception\CouldNotSaveException(__($exception->getMessage()));
         }
 
         return $person;
     }
 
     /** {@inheritdoc} */
-    public function delete(PersonsInterface $person)
+    public function delete(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person)
     {
         try {
             $this->resource->delete($person);
         } catch (\Exception $exception) {
-            throw new CouldNotDeleteException(__($exception->getMessage()));
+            throw new \Magento\Framework\Exception\CouldNotDeleteException(__($exception->getMessage()));
         }
 
         return $this;

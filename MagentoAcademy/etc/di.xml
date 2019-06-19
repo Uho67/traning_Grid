@@ -9,6 +9,9 @@
                 type="SysPerson\MagentoAcademy\Model\PersonsRepository" />
     <preference for="SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterface"
                 type="Magento\Framework\Api\SearchResults" />
+    <preference for="SysPerson\MagentoAcademy\Api\PersonFront\ConfigInterface"
+                type="SysPerson\MagentoAcademy\ViewModel\ReadFrontConfig" />
+
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
@@ -18,5 +21,11 @@
                 >SysPerson\MagentoAcademy\Model\ResourceModel\Persons\Grid\Collection</item>
             </argument>
         </arguments>
+    </type>
+    <type name="SysPerson\MagentoAcademy\Block\PersonsList">
+        <plugin name = "PersonListPlugin" type ="SysPerson\MagentoAcademy\Plugin\PersonListPlugin"/>
+    </type>
+    <type name="SysPerson\MagentoAcademy\Model\ResourceModel\Persons\Collection">
+        <plugin name = "PersonCollectionPlugin" type ="SysPerson\MagentoAcademy\Plugin\PersonCollectionPlugin"/>
     </type>
 </config>

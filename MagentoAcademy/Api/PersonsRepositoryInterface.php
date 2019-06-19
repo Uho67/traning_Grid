@@ -3,46 +3,38 @@
 
 namespace SysPerson\MagentoAcademy\Api;
 
-use Magento\Framework\Api\SearchCriteriaInterface;
-use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Framework\Exception\CouldNotDeleteException;
-use Magento\Framework\Exception\CouldNotSaveException;
-
-use SysPerson\MagentoAcademy\Api\Data\PersonsInterface;
-use SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterface;
-
 interface PersonsRepositoryInterface
 {
     /**
      * @param int $id
-     * @return PersonsInterface
-     * @throws NoSuchEntityException
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function getById($id);
 
     /**
      * @param int $id
-     * @return PersonsRepositoryInterface
+     * @return \SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface
      */
     public function deleteById($id);
 
     /**
-     * @param SearchCriteriaInterface $searchCriteria
-     * @return PersonsSearchResultsInterface
+     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsSearchResultsInterface
      */
-    public function getList(SearchCriteriaInterface $searchCriteria);
+    public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
 
     /**
-     * @param PersonsInterface $lessons
-     * @return PersonsInterface
-     * @throws CouldNotSaveException
+     * @param \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsInterface
+     * @throws \Magento\Framework\Exception\CouldNotSaveException
      */
-    public function save(PersonsInterface $lessons);
+    public function save(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons);
 
     /**
-     * @param PersonsInterface $lessons
-     * @return PersonsRepositoryInterface
-     * @throws CouldNotDeleteException
+     * @param \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons
+     * @return \SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface
+     * @throws \Magento\Framework\Exception\CouldNotDeleteException
      */
-    public function delete(PersonsInterface $lessons);
+    public function delete(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons);
 }

@@ -10,4 +10,12 @@
             </general>
         </persons>
     </default>
+    <default>
+        <person_front>
+            <general>
+                <title>Person Title</title>
+                <message>Hi, I am person config </message>
+            </general>
+        </person_front>
+    </default>
 </config>

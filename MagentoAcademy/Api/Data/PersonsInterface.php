@@ -29,7 +29,7 @@ interface PersonsInterface
 
     /**
      * @param string $title
-     * @return PersonsInterface
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsInterface
      */
     public function setName($title);
 
@@ -40,7 +40,7 @@ interface PersonsInterface
 
     /**
      * @param string $name
-     * @return PersonsInterface
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsInterface
      */
     public function setSurname($name);
 
@@ -51,7 +51,7 @@ interface PersonsInterface
 
     /**
      * @param \DateTime|string $statDate
-     * @return PersonsInterface
+     * @return \SysPerson\MagentoAcademy\Api\Data\PersonsInterface
      */
     public function setBirthDate($statDate);
 

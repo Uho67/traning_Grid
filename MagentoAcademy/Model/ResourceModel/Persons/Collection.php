@@ -3,16 +3,11 @@
 
 namespace SysPerson\MagentoAcademy\Model\ResourceModel\Persons;
 
-use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-
-use SysPerson\MagentoAcademy\Model\Persons as Model;
-use SysPerson\MagentoAcademy\Model\ResourceModel\Persons as ResourceModel;
-
-class Collection extends AbstractCollection
+class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     /** {@inheritdoc} */
     protected function _construct()
     {
-        $this->_init(Model::class, ResourceModel::class);
+        $this->_init(\SysPerson\MagentoAcademy\Model\Persons::class, \SysPerson\MagentoAcademy\Model\ResourceModel\Persons::class);
     }
 }

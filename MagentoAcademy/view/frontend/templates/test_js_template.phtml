@@ -1,0 +1,42 @@
+
+
+<?php
+/** @var $block \Magento\Framework\View\Element\Template" */
+
+/** @var \SysPerson\MagentoAcademy\Api\PersonFront\ConfigInterface $viewModel */
+$viewModel = $block->getview_model();
+?>
+
+
+<div class="ui-test" data-bind="scope: 'alevel-component'">
+    <h1 data-bind="text: title"></h1>
+</div>
+
+
+<div class="ui-test" data-bind="scope: 'alevel-component-2'">
+    <h1 data-bind="text: title"></h1>
+    <p data-bind="text: message"></p>
+    <p data-bind="text: customMethod()"></p>
+</div>
+
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "alevel-component": {
+                        "component": "ALevel_UiComponent/js/component",
+                        "title": "Hello Ui"
+                    }
+                    ,
+                    "alevel-component-2": {
+                        "component": "ALevel_UiComponent/js/component",
+                        "title": "<?= /* @escapeNotVerified */ $viewModel->getTitle(); ?>",
+                        "message": "<?= /* @escapeNotVerified */ $viewModel->getMessage(); ?>"
+                    }
+                }
+            }
+        }
+    }
+</script>
