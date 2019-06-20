@@ -24,7 +24,7 @@ abstract class Persons extends Action
 {
     const ACL_RESOURCE          = 'Sysperson_MagentoAcademy::all';
     const MENU_ITEM             = 'Sysperson_MagentoAcademy::all';
-    const PAGE_TITLE            = 'MagentoAcademy Persons';
+    const PAGE_TITLE            = 'Sysperson_MagentoAcademy Persons';
     const BREADCRUMB_TITLE      = 'Persons';
     const QUERY_PARAM_ID        = 'id';
 
@@ -53,7 +53,7 @@ abstract class Persons extends Action
      * @param Context                       $context
      * @param Registry                      $registry
      * @param PageFactory                   $pageFactory
-     * @param PersonsRepositoryInterface    $lessonsRepository
+     * @param PersonsRepositoryInterface    $personsRepository
      * @param PersonsFactory                $factory
      * @param LoggerInterface               $logger
      */
@@ -78,7 +78,6 @@ abstract class Persons extends Action
     public function execute()
     {
         $this->_setPageData();
-
         return $this->resultPage;
     }
 
@@ -108,7 +107,7 @@ abstract class Persons extends Action
      */
     protected function _setPageData()
     {
-        $resultPage = $this->_getResultPage();
+          $resultPage = $this->_getResultPage();
         $resultPage->setActiveMenu(static::MENU_ITEM);
         $resultPage->getConfig()->getTitle()->prepend((__(static::PAGE_TITLE)));
         $resultPage->addBreadcrumb(__(static::BREADCRUMB_TITLE), __(static::BREADCRUMB_TITLE));

@@ -1,8 +1,8 @@
 <?php
 
 
-namespace SyPersont\MagentoAcademy\Controller\Adminhtml\Persons;
-
+namespace SysPerson\MagentoAcademy\Controller\Adminhtml\Persons;
+use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 use SysPerson\MagentoAcademy\Api\Data\PersonsInterface;
@@ -18,7 +18,8 @@ class Edit extends BaseAction
     /** {@inheritdoc} */
     public function execute()
     {
-        $id = $this->getRequest()->getParam(static::QUERY_PARAM_ID);
+        $my_request = $this->getRequest();
+        $id = $my_request->getParam(static::QUERY_PARAM_ID);
 
         if (!empty($id)) {
             try {
@@ -47,4 +48,11 @@ class Edit extends BaseAction
 
         return parent::execute();
     }
+    /**
+     * @return ResponseInterface
+     */
+//    protected function redirectToGrid()
+//    {
+//        return $this->_redirect('*/*/uicreate');
+//    }
 }

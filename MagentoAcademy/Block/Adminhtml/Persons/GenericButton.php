@@ -1,7 +1,7 @@
 <?php
 
 
-namespace SysPerson\MagentoAcademy\Block\Adminhtml\Persons\Edit;
+namespace SysPerson\MagentoAcademy\Block\Adminhtml\Persons;
 
 use Magento\Backend\Block\Widget\Context;
 use Magento\Framework\Exception\NoSuchEntityException;

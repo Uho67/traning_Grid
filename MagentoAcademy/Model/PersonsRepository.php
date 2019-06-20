@@ -71,6 +71,7 @@ class PersonsRepository implements \SysPerson\MagentoAcademy\Api\PersonsReposito
     /** {@inheritdoc} */
     public function save(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person)
     {
+
         try {
             $this->resource->save($person);
         } catch (\Exception $exception) {

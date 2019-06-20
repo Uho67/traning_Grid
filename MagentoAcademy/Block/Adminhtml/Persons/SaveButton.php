@@ -5,7 +5,7 @@ namespace SysPerson\MagentoAcademy\Block\Adminhtml\Persons;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 
-class SaveButton extends \Sysint\MagentoAcademy\Block\Adminhtml\Lessons\Edit\GenericButton implements ButtonProviderInterface
+class SaveButton extends \SysPerson\MagentoAcademy\Block\Adminhtml\Persons\GenericButton implements ButtonProviderInterface
 {
     /** {@inheritdoc} */
     public function getButtonData()

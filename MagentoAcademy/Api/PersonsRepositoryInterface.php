@@ -25,16 +25,16 @@ interface PersonsRepositoryInterface
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
 
     /**
-     * @param \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons
+     * @param \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person
      * @return \SysPerson\MagentoAcademy\Api\Data\PersonsInterface
      * @throws \Magento\Framework\Exception\CouldNotSaveException
      */
-    public function save(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons);
+    public function save(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person);
 
     /**
-     * @param \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons
+     * @param \SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person
      * @return \SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface
      * @throws \Magento\Framework\Exception\CouldNotDeleteException
      */
-    public function delete(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $lessons);
+    public function delete(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person);
 }
