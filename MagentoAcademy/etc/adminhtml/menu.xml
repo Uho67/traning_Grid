@@ -35,6 +35,21 @@
                 resource="SysPerson_MagentoAcademy::grid"
         />
 
+        <add
+                id="SysPerson_MagentoAcademy::system_config"
+                title="Config"
+                translate="title"
+                module="SysPerson_MagentoAcademy"
+                sortOrder="10"
+                parent="SysPerson_MagentoAcademy::all"
+                action="adminhtml/system_config/edit/section/persons"
+                resource="SysPerson_MagentoAcademy::system_config"
+        />
+
+
+
+
+
 
 
 

@@ -69,23 +69,23 @@ class PersonsRepository implements \SysPerson\MagentoAcademy\Api\PersonsReposito
     }
 
     /** {@inheritdoc} */
-    public function save(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person)
+    public function save(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $persons)
     {
 
         try {
-            $this->resource->save($person);
+            $this->resource->save($persons);
         } catch (\Exception $exception) {
             throw new \Magento\Framework\Exception\CouldNotSaveException(__($exception->getMessage()));
         }
 
-        return $person;
+        return $persons;
     }
 
     /** {@inheritdoc} */
-    public function delete(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $person)
+    public function delete(\SysPerson\MagentoAcademy\Api\Data\PersonsInterface $persons)
     {
         try {
-            $this->resource->delete($person);
+            $this->resource->delete($persons);
         } catch (\Exception $exception) {
             throw new \Magento\Framework\Exception\CouldNotDeleteException(__($exception->getMessage()));
         }

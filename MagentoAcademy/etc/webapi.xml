@@ -21,6 +21,12 @@
             <resource ref="SysPerson_MagentoAcademy::all"/>
         </resources>
     </route>
+    <route url="/V1/person/save/:id" method="POST">
+        <service class="SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="SysPerson_MagentoAcademy::all"/>
+        </resources>
+    </route>
     <route url="/V1/person/deletebyid/:id" method="DELETE">
         <service class="SysPerson\MagentoAcademy\Api\PersonsRepositoryInterface" method="deleteById"/>
         <resources>

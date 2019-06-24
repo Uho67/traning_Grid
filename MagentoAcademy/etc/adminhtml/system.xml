@@ -30,7 +30,7 @@
                         showInStore="1"
                 >
                     <label>Enabled</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <source_model>SysPerson\MagentoAcademy\Model\Sourse\Yesnonear</source_model>
                 </field>
                 <field
                         id="test"

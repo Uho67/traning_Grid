@@ -43,7 +43,7 @@ class PersonsProvider extends AbstractDataProvider
             return [];
         }
 
-        /** @var $person PersonsInterface */
+        /** @var $persons PersonsInterface */
         foreach ($items as $person) {
             $this->loadedData[$person->getId()] = $person->getData();
         }

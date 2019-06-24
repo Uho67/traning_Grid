@@ -77,16 +77,14 @@
                 </argument>
             </action>
             <action name="edit">
-                <argument name="data" xsi:type="array">
-                    <item name="config" xsi:type="array">
-                        <item name="type" xsi:type="string">edit</item>
-                        <item name="label" xsi:type="string" translate="true">Edit</item>
-                        <item name="callback" xsi:type="array">
-                            <item name="provider" xsi:type="string">persons_grid_listing.news_grid_listing.persons_grid_columns_editor</item>
-                            <item name="target" xsi:type="string">editSelected</item>
-                        </item>
-                    </item>
-                </argument>
+                <settings>
+                    <callback>
+                        <target>editSelected</target>
+                        <provider>persons_grid_listing.persons_grid_listing.persons_grid_columns_editor</provider>
+                    </callback>
+                    <type>edit</type>
+                    <label translate="true">Edit</label>
+                </settings>
             </action>
         </massaction>
         <paging name="listing_paging"/>
@@ -95,12 +93,12 @@
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
-                    <item name="saveUrl" xsi:type="url" path="*/*/inlineSave"/>
+                    <item name="saveUrl" xsi:type="url" path="*/*/inlineEdit"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">person_id</param>
                 <param name="enabled" xsi:type="boolean">true</param>
-                <param name="selectProvider" xsi:type="string">persons_grid_listing.news_grid_listing.persons_grid_columns.ids</param>
+                <param name="selectProvider" xsi:type="string">persons_grid_listing.persons_grid_listing.persons_grid_columns.ids</param>
             </editorConfig>
             <childDefaults>
                 <param name="fieldAction" xsi:type="array">

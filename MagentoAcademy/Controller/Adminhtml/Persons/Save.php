@@ -16,7 +16,7 @@ class Save extends BaseAction
 
         if ($isPost) {
             $model = $this->getModel();
-            $formData = $this->getRequest()->getParam('person');
+            $formData = $this->getRequest()->getParam('persons');
 
             if (empty($formData)) {
                 $formData = $this->getRequest()->getParams();
