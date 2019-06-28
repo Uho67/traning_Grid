@@ -35,13 +35,14 @@
                 <field
                         id="test"
                         translate="label"
-                        type="text"
+                        type="multiselect"
                         sortOrder="10"
                         showInDefault="1"
                         showInWebsite="1"
-                        showInStore="1"
+                        showInStore="0"
                 >
-                    <label>Test</label>
+                    <label>Country</label>
+                    <source_model>\Magento\Customer\Model\ResourceModel\Address\Attribute\Source\Country</source_model>
                 </field>
             </group>
         </section>
