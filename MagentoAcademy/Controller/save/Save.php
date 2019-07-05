@@ -8,7 +8,7 @@
 
 namespace SysPerson\MagentoAcademy\Controller\Save;
 
-use SysPerson\MagentoAcademy\Controller\Order\MyBaseQuickOrder;
+use SysPerson\MagentoAcademy\Controller\Adminhtml\MyBaseQuickOrder;
 use SysPerson\MagentoAcademy\Api\Order\QuickOrderInterface;
 class Save extends MyBaseQuickOrder
 {

@@ -36,6 +36,18 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item
+                        name="orders_grid_listing_data_source"
+                        xsi:type="string"
+                >SysPerson\MagentoAcademy\Model\ResourceModel\QuickOrders\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
     <type name="SysPerson\MagentoAcademy\Block\PersonsList">
         <plugin name = "PersonListPlugin" type ="SysPerson\MagentoAcademy\Plugin\PersonListPlugin"/>
     </type>

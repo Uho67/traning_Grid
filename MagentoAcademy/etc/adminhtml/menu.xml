@@ -46,6 +46,17 @@
                 resource="SysPerson_MagentoAcademy::system_config"
         />
 
+        <add
+                id="SysPerson_MagentoAcademy::OrdersGrid"
+                title="Orders UI Grid"
+                translate="title"
+                module="SysPerson_MagentoAcademy"
+                sortOrder="10"
+                parent="SysPerson_MagentoAcademy::all"
+                action="sysperson_magentoacademy/orders/listing"
+                resource="SysPerson_MagentoAcademy::grid"
+        />
+
 
 
 
