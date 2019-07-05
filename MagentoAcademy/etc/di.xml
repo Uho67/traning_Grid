@@ -15,6 +15,17 @@
     <preference for="SysPerson\MagentoAcademy\Api\PersonFront\ConfigInterface"
                 type="SysPerson\MagentoAcademy\ViewModel\ReadFrontConfig" />
 
+
+    <preference for="SysPerson\MagentoAcademy\Api\Order\QuickOrderInterface"
+                type="SysPerson\MagentoAcademy\Model\QuickOrders" />
+
+    <preference for="SysPerson\MagentoAcademy\Api\QuickOrdersRepositoryInterface"
+                type="SysPerson\MagentoAcademy\Model\QuickOrdersRepository" />
+
+    <preference for="SysPerson\MagentoAcademy\Api\Order\QuickOrderSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+
+
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
